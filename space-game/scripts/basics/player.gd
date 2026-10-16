@@ -14,7 +14,7 @@ extends CharacterBody2D
 @export var sprint_drain_rate: float = 30 # Stamina drained per second
 @export var dash_cost: float = 50         # Flat stamina cost per dash
 @export var stamina_regen_rate: float = 10 # Stamina recovered per second
-@export var stamina_regen_delay: float = 0.5 # Delay before regen starts
+@export var stamina_regen_delay: float = 1 # Delay before regen starts
 
 var current_stamina: float
 var time_since_stamina_drain: float = 0.0
