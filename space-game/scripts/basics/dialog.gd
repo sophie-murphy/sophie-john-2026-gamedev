@@ -64,7 +64,6 @@ func read_text(dialog_id: String, visited_ids: Array[String] = []) -> void:
 
 	visited_ids.append(dialog_id)
 
-	# Process conditions and branching
 	if entry.has("condition"):
 		var condition: Dictionary = entry["condition"]
 		var check_func: String = condition.get("check_function", "")
@@ -86,7 +85,6 @@ func read_text(dialog_id: String, visited_ids: Array[String] = []) -> void:
 						action_function_map[target].call()
 						dialogue_action_executed.emit("run_function", target)
 
-	# Pass the entire entry dictionary now so we can extract options
 	_display_dialog(dialog_id, entry)
 
 
@@ -94,9 +92,8 @@ func _display_dialog(dialog_id: String, entry: Dictionary) -> void:
 	var text_value: String = entry.get("text", "")
 	var options_list: Array = entry.get("options", [])
 	
-	# NEW: If there is no text and no options, the conversation is over. Kill the UI.
 	if text_value.is_empty() and options_list.is_empty():
-		queue_free() # Destroys this entire dialog node so they don't stack up
+		queue_free() 
 		return
 	
 	if current_tween and current_tween.is_valid():
@@ -117,7 +114,6 @@ func _display_dialog(dialog_id: String, entry: Dictionary) -> void:
 
 func _setup_options(options: Array) -> void:
 	for child in option_container.get_children():
-		# Disable old buttons immediately so they can't be clicked while dying
 		if child is Button:
 			child.disabled = true 
 		option_container.remove_child(child)
@@ -129,7 +125,6 @@ func _setup_options(options: Array) -> void:
 		var target: String = option.get("target", "")
 		
 		btn.pressed.connect(func(): 
-			# 2. Disable ALL options immediately upon one being clicked to prevent double-firing
 			for c in option_container.get_children():
 				if c is Button:
 					c.disabled = true
