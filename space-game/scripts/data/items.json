@@ -1,0 +1,27 @@
+{
+  "iron_ore": {
+	"name": "Iron Ore",
+	"weight": 5.0,
+	"max_stack": 99,
+	"properties": {
+	  "usable": false
+	}
+  },
+  "feather": {
+	"name": "Feather",
+	"weight": 0.1,
+	"max_stack": 50,
+	"properties": {
+	  "usable": false
+	}
+  },
+  "health_potion": {
+	"name": "Health Potion",
+	"weight": 0.5,
+	"max_stack": 10,
+	"properties": {
+	  "usable": true,
+	  "heal_amount": 25
+	}
+  }
+}
