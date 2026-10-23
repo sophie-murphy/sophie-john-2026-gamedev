@@ -1,0 +1,48 @@
+{
+  "guard_greeting": {
+	"text": "Halt! Who goes there?",
+	"options": [
+	  { "text": "I have my papers right here.", "target": "check_papers" },
+	  { "text": "I go where I please! (Attack)", "target": "guard_combat" }
+	]
+  },
+  "check_papers": {
+	"text": "Let me see those...",
+	"condition": {
+	  "check_function": "player_has_pass",
+	  "expected_value": true,
+	  "on_true": {
+		"action": "switch_dialog",
+		"target": "guard_let_pass"
+	  },
+	  "on_false": {
+		"action": "run_function",
+		"target": "trigger_combat"
+	  }
+	}
+  },
+  "guard_combat": {
+	"text": "To arms!",
+	"condition": {
+	  "check_function": "player_has_pass",
+	  "expected_value": false,
+	  "on_true": {
+		"action": "run_function",
+		"target": "trigger_combat"
+	  },
+	  "on_false": {
+		"action": "run_function",
+		"target": "trigger_combat"
+	  }
+	}
+  },
+  "guard_let_pass": {
+	"text": "Ah, I see your papers are in order. Move along.",
+	"options": [
+	  { "text": "[Leave]", "target": "end_conversation" }
+	]
+  },
+  "end_conversation": {
+	"text": ""
+  }
+}

@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://blbjc8qpdlrp0"]
+
+[ext_resource type="Script" uid="uid://cnk7bufc75m3x" path="res://scripts/basics/dialog.gd" id="1_dkqom"]
+
+[node name="DialogSystem" type="CanvasLayer" unique_id=1993114625]
+script = ExtResource("1_dkqom")
+
+[node name="Panel" type="Panel" parent="." unique_id=204455359]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -339.0
+offset_top = -195.0
+offset_right = 340.0
+offset_bottom = -144.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Lable" type="RichTextLabel" parent="Panel" unique_id=1638430841]
+layout_mode = 0
+offset_left = 7.5
+offset_top = 3.0
+offset_right = 674.5
+offset_bottom = 48.0
+mouse_filter = 1
+bbcode_enabled = true
+
+[node name="OptionContainer" type="VBoxContainer" parent="Panel" unique_id=1608055924]
+layout_mode = 0
+offset_top = 53.0
+offset_right = 680.0
+offset_bottom = 181.0
