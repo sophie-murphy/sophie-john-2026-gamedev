@@ -2,11 +2,15 @@
 
 [ext_resource type="TileSet" uid="uid://dsqi2ivlbcu0k" path="res://scenes/tilesets/new_tile_set.tres" id="1_amxg5"]
 [ext_resource type="PackedScene" uid="uid://bloxwt66f3dfh" path="res://scenes/player.tscn" id="1_kyfjp"]
+[ext_resource type="PackedScene" uid="uid://cb2uulqgw6l7" path="res://scenes/basics/common/interactable_base.tscn" id="3_3263u"]
+[ext_resource type="PackedScene" uid="uid://88qbyu8uy1ls" path="res://scenes/Inventory.tscn" id="4_umbte"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_rnyeh"]
 b = Vector2(8, 245)
 
-[node name="Node2D" type="Node2D" unique_id=2010600877]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rnyeh"]
+
+[node name="test_world" type="Node2D" unique_id=2010600877]
 
 [node name="map" type="Node2D" parent="." unique_id=1254445718]
 
@@ -26,3 +30,11 @@ position = Vector2(246, 169)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=822363761]
 position = Vector2(168, 58)
 shape = SubResource("SegmentShape2D_rnyeh")
+
+[node name="InteractionBase" parent="." unique_id=1737736679 instance=ExtResource("3_3263u")]
+position = Vector2(303, 166)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionBase" unique_id=544148020]
+shape = SubResource("CircleShape2D_rnyeh")
+
+[node name="Inventory" parent="." unique_id=1245825361 instance=ExtResource("4_umbte")]
