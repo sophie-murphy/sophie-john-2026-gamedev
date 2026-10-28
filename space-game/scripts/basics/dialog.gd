@@ -1,14 +1,13 @@
 extends Node
 
 @export_file("*.json") var dialog_file_path: String = "res://scripts/data/dialog.json"
-@export var auto_start_dialog: bool = true
+@export var auto_start_dialog: bool = false
 @export var initial_dialog_id: String = "guard_greeting"
 @export_range(1, 100, 1) var max_dialog_redirects: int = 20
 @export var typing_speed: float = 0.03 
 
-# References
+
 @onready var lable: RichTextLabel = $Panel/Lable
-# Add a VBoxContainer (or HBoxContainer) inside your Panel to hold the buttons!
 @onready var option_container: Control = $Panel/OptionContainer 
 
 signal dialogue_displayed(dialog_id: String, text: String)

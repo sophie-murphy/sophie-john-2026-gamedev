@@ -15,6 +15,14 @@ var items: Array[Dictionary] = []
 var current_weight: float = 0.0
 const ITEMS = "res://scripts/data/items.json"
 
+
+func _unhandled_input(event):
+	if event.is_action_pressed("inventory"):
+		if self.visible == false:
+			self.visible = true
+		else:
+			self.visible = false
+
 func _ready() -> void:
 	# 1. Load the item database from JSON
 	_load_database(ITEMS)

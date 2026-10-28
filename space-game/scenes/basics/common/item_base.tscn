@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cxh72i2ad2awr"]
+
+[ext_resource type="Script" uid="uid://dsil8vp73xd7c" path="res://scripts/basics/common/item_base.gd" id="1_gqd1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_umbte"]
+
+[node name="ItemBase" type="Area2D" unique_id=1737736679]
+script = ExtResource("1_gqd1o")
+
+[node name="ItemSprite" type="Sprite2D" parent="." unique_id=1975429512]
+
+[node name="ItemShape" type="CollisionShape2D" parent="." unique_id=840546059]
+shape = SubResource("CircleShape2D_umbte")
