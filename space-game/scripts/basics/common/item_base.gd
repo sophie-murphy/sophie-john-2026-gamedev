@@ -17,8 +17,10 @@ func _ready() -> void:
 		item_shape.shape = item_shape.shape.duplicate()
 
 func when_interacted() -> void:
-	Inventory.add_item(item_id, item_amount)
-	queue_free()
+	if Inventory.add_item(item_id, item_amount):
+		queue_free()
+	else:
+		print("Could not pick up ", item_id)
 
 ## Called by the spawner to initialize the item
 func setup(id: String, amount: int) -> void:

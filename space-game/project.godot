@@ -18,8 +18,8 @@ config/icon="res://icon.svg"
 [autoload]
 
 Dialog="*uid://cnk7bufc75m3x"
-Inventory="*uid://bscfu1xur4e31"
 ItemMaster="*uid://ddsr8r1olq3pm"
+Inventory="*uid://88qbyu8uy1ls"
 
 [display]
 
