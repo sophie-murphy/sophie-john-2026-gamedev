@@ -26,6 +26,10 @@ tile_set = ExtResource("1_amxg5")
 [node name="enemy_base" parent="map" unique_id=525906445 instance=ExtResource("3_ynswa")]
 position = Vector2(302, 211)
 
+[node name="enemy_base2" parent="map" unique_id=843557206 instance=ExtResource("3_ynswa")]
+position = Vector2(613, 222)
+enemy_id = "basic_guard"
+
 [node name="player" parent="." unique_id=1564407496 instance=ExtResource("1_kyfjp")]
 position = Vector2(246, 169)
 
