@@ -44,6 +44,7 @@ func _load_and_apply_texture() -> void:
 		item_sprite.texture = fallback_texture
 
 func _match_collision_to_sprite() -> void:
+	print("match collision")
 	if not item_sprite or not item_sprite.texture or not item_shape:
 		return
 		

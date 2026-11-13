@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://fqaiqn71vkwa"]
+
+[ext_resource type="Script" uid="uid://wjo178j34f3i" path="res://scripts/basics/entities/enemy_base.gd" id="1_ohvhv"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_ohvhv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
+size = Vector2(32, 30)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_la5gc"]
+radius = 16.0
+
+[node name="enemy_base" type="CharacterBody2D" unique_id=525906445]
+script = ExtResource("1_ohvhv")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=648350179]
+position = Vector2(0, 9.536743e-07)
+scale = Vector2(31.499998, 30.5)
+texture = SubResource("PlaceholderTexture2D_ohvhv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1996183993]
+shape = SubResource("RectangleShape2D_g2els")
+
+[node name="DetectionArea" type="Area2D" parent="." unique_id=1446600156]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea" unique_id=782497543]
+shape = SubResource("CircleShape2D_la5gc")
