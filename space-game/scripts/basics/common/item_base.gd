@@ -17,8 +17,10 @@ func _ready() -> void:
 		item_shape.shape = item_shape.shape.duplicate()
 
 func when_interacted() -> void:
-	Inventory.add_item(item_id, item_amount)
-	queue_free()
+	if Inventory.add_item(item_id, item_amount):
+		queue_free()
+	else:
+		print("Could not pick up ", item_id)
 
 ## Called by the spawner to initialize the item
 func setup(id: String, amount: int) -> void:
@@ -42,6 +44,7 @@ func _load_and_apply_texture() -> void:
 		item_sprite.texture = fallback_texture
 
 func _match_collision_to_sprite() -> void:
+	print("match collision")
 	if not item_sprite or not item_sprite.texture or not item_shape:
 		return
 		

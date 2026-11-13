@@ -48,7 +48,7 @@ func _unhandled_input(event):
 	if event is InputEventMouseButton and event.pressed:
 		if event.button_index == MOUSE_BUTTON_LEFT:
 			print("SPAWNING!")
-			ItemMaster.spawn(self.get_parent(),get_local_mouse_position(),"feather",1)
+			ItemMaster.spawn(self.get_parent(),get_global_mouse_position(),"iron_ore",1)
 
 func _physics_process(delta: float) -> void:
 	

@@ -1,0 +1,18 @@
+{
+  "basic_slime": {
+	"max_health": 30.0,
+	"walk_speed": 80.0,
+	"attack_damage": 10.0,
+	"drop_item_id": "feather",
+	"drop_chance": 0.3,
+	"detection_multiplier": 3.0
+  },
+  "goblin_guard": {
+	"max_health": 120.0,
+	"walk_speed": 150.0,
+	"attack_damage": 25.0,
+	"drop_item_id": "iron_ore",
+	"drop_chance": 0.8,
+	"detection_multiplier": 5.0
+  }
+}
