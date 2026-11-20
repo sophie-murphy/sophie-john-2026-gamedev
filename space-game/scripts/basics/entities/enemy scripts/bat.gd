@@ -2,7 +2,7 @@ extends EnemyBehavior
 
 func _on_setup() -> void:
 	current_state = State.WANDER
-	set_detection_multiplier(6.0)
+	set_detection_radius(30)
 
 func process_behavior(delta: float) -> void:
 	tick_timers(delta)
