@@ -4,7 +4,7 @@ var strafe_clockwise: bool = true
 
 func _on_setup() -> void:
 	current_state = State.IDLE
-	set_detection_multiplier(5.0) # Wide vision cone[cite: 3]
+	set_detection_radius(5.0) # Wide vision cone[cite: 3]
 
 func process_behavior(delta: float) -> void:
 	tick_timers(delta)
